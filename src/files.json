@@ -6,7 +6,7 @@
     "name": "Install Dependencies (Windows).bat"
   },
   {
-    "hash": "5c869a0998243fb8a51fcd677c95f939",
+    "hash": "8e109223f1e54b78a31c89b97d8f0968",
     "src": "src/README.md",
     "dst": "./README.md",
     "name": "README.md"
@@ -78,7 +78,7 @@
     "name": "Multiverse.js"
   },
   {
-    "hash": "1ace369f4d29dbe5250b327e604233ea",
+    "hash": "9ad03d1c240374a7e4346a4e28383463",
     "src": "src/core/ConfigService.js",
     "dst": "./core/ConfigService.js",
     "name": "ConfigService.js"
@@ -96,7 +96,7 @@
     "name": "ControlServer.js"
   },
   {
-    "hash": "7b5724e79bce08fdba0e326f5712149b",
+    "hash": "d213ce8b7a61f078b2bf656196a50980",
     "src": "src/core/GameServer.js",
     "dst": "./core/GameServer.js",
     "name": "GameServer.js"
@@ -138,7 +138,7 @@
     "name": "PlayerTracker.js"
   },
   {
-    "hash": "f17c8cdccf4ef5eaf08b20b611350664",
+    "hash": "ec7817f0a1fd95ec19851d21a7e1db2e",
     "src": "src/core/PluginLoader.js",
     "dst": "./core/PluginLoader.js",
     "name": "PluginLoader.js"
@@ -156,7 +156,7 @@
     "name": "StatServer.js"
   },
   {
-    "hash": "d59479af5bfa80a0ea9e46b920c655e5",
+    "hash": "c3611aa919bee81b86ca8ae456c520ef",
     "src": "src/core/Updater.js",
     "dst": "./core/Updater.js",
     "name": "Updater.js"
@@ -246,7 +246,7 @@
     "name": "index.js"
   },
   {
-    "hash": "4a7f83925bcd4cd98272e2b43e4050f0",
+    "hash": "b723a7349a8e35ec848a068e79d5898a",
     "src": "src/files.json",
     "dst": "./files.json",
     "name": "files.json"
@@ -1020,13 +1020,13 @@
     "name": "start.sh"
   },
   {
-    "hash": "b02aababfa37b50b3979c72e766f7f35",
+    "hash": "b5203406c175d9b44e8873a6da20dbf9",
     "src": "README.md",
     "dst": "../README.md",
     "name": "Readme"
   },
   {
-    "hash": "4c5c43ce796c4c33cb4b1ec5200d554d",
+    "hash": "3adb2e420e1d158069dcfb87f19cca77",
     "src": "package.json",
     "dst": "../package.json",
     "name": "package.json"

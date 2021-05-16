@@ -7,7 +7,7 @@ We worked really hard for this project. Although we dont care if you enhance it 
 if you copy it and claim our work as your own. Although it might feel good, to take the credit, you would ultimatly
 regret it. But please feel free to change the files and publish putting your name up as well as ours.
 We will also not get into legalities. but please dont take advantage that we dont use
-legalities. Instead, treat us with respect like we treat you. 
+legalities. Instead, treat us with respect like we treat you.
 
 Sincerely
 The AJS Dev Team.
@@ -125,7 +125,7 @@ this.name = name;
     qMacro: 0,
     eMacro: 0,
     rMacro: 0,
-    
+
     // Current client configs
     darkBG: 1,
     chat: 2,
@@ -136,11 +136,11 @@ this.name = name;
     names: 2,
     showMass: 1,
     smooth: 1,
-    
+
     // Future feature
     minionCount: 0,
     minimap: 0,
-    
+
     // Others
     maxName: 15,
     };
@@ -252,7 +252,7 @@ this.name = name;
   init() {}
   log(a) {
     if (this.isMaster) console.log(a);
-    
+
   }
 msgAll(msg) {
   var packet = new Packet.Chat("[Console]", msg);
@@ -260,7 +260,7 @@ msgAll(msg) {
             for (var i = 0; i < this.clients.length; i++) {
                 this.clients[i].sendPacket(packet);
             }
-  
+
 }
 reloadDataPacket() {
   for (var i in this.clients) {
@@ -268,7 +268,7 @@ reloadDataPacket() {
     if (!client) continue;
     client.sendPacket(new Packet.DataPacket(this));
   }
-  
+
 }
 reloadClientPacket() {
   for (var i in this.clients) {
@@ -276,7 +276,7 @@ reloadClientPacket() {
     if (!client) continue;
     client.sendPacket(new Packet.ClientPacket(this));
   }
-  
+
 }
 getDist(x1, y1, x2, y2) { // Use Pythagoras theorem
     let from = {'x': x1, 'y': y1 };
@@ -285,7 +285,7 @@ getDist(x1, y1, x2, y2) { // Use Pythagoras theorem
   };
 pm(id, msg,tag) {
   var t = (tag) ? tag : "[Console PM]";
- 
+
             // Send to all clients (broadcast)
             for (var i = 0; i < this.clients.length; i++) {
               if (this.clients[i].playerTracker.pID == id) {
@@ -298,7 +298,7 @@ pm(id, msg,tag) {
 startingFood() {
   return this.generatorService.startFood();
 }
-    
+
   start() {
 
 
@@ -308,7 +308,7 @@ startingFood() {
     this.ipcounts = [];
     // Gamemode configurations
     this.gameMode.onServerInit(this);
-      
+
     this.masterServer();
 
     // Start the server
@@ -327,7 +327,7 @@ startingFood() {
       setImmediate(this.mainLoopBind);
  var port = (this.port) ? this.port : this.config.serverPort;
       var serverPort = (this.config.vps == 1) ? process.env.PORT : port;
-      
+
       console.log("[" + this.name + "] Listening on port " + serverPort);
       console.log("[" + this.name + "] Current game mode is " + this.gameMode.name);
       Cell.spi = this.config.SpikedCells;
@@ -414,7 +414,7 @@ startingFood() {
       let showlmsg = this.config.showjlinfo;
 
       if ((this.ipcounts[ws._socket.remoteAddress] >= this.config.serverMaxConnectionsPerIp) && (this.whlist.indexOf(ws._socket.remoteAddress) == -1)) {
-        
+
         ws.close();
 
         if (this.config.autoban == 1 && (this.banned.indexOf(ws._socket.remoteAddress) == -1)) {
@@ -451,7 +451,7 @@ startingFood() {
           }
         }
       } else {
-        
+
       }
       if ((this.uniban.indexOf(ws._socket.remoteAddress) != -1 && this.config.uniban == 1) || (this.banned.indexOf(ws._socket.remoteAddress) != -1) && (this.whlist.indexOf(ws._socket.remoteAddress) == -1)) { // Banned
         if (this.config.showbmessage == 1) {
@@ -487,7 +487,7 @@ startingFood() {
          for (var j in name) {
            self.chatNames[i].slice(j,1);
          }
-         
+
        }
         // Log disconnections
         if (showlmsg == 1) {
@@ -510,13 +510,13 @@ startingFood() {
 
             } else if (node.position.x > self.config.borderRight) {
               self.removeNode(node);
-            
+
             } else if (node.position.y < self.config.borderTop) {
               self.removeNode(node);
-             
+
             } else if (node.position.y > self.config.borderBottom) {
               self.removeNode(node);
-            
+
             }
           });
         }
@@ -553,7 +553,7 @@ startingFood() {
       ws.on('message', ws.packetHandler.handleMessage.bind(ws.packetHandler));
       ws.on('error', function err(error) {
         console.log("[WARN] Caught ws error. Prevented server crash. Error: " + error);
-        
+
       });
 
       let bindObject = {
@@ -667,7 +667,7 @@ this.world.removeQuadMap(undefined,node.getId());
     }
     return this.lastPlayerId++;
   }
-  
+
 updateStickyCells() {
   if (!this._nodesSticky) return;
   for (var i in this._nodesSticky) {
@@ -759,19 +759,19 @@ stop() {
     // Random spawns for players
     let pos;
 
-   
-    
 
-   
+
+
+
       // Get random spawn if no food cell is found
       pos = this.getRandomPosition();
-    
+
 
     return pos;
   }
 beforeq(player) {
   return true;
-  
+
 }
   getRandomPosition() {
     return this.getWorld().getRandomPosition();
@@ -897,14 +897,14 @@ beforeq(player) {
       } else {
        // cell.quadUpdate(this);
       }
-      
-      
-      
+
+
+
     })
-    
+
   }
   beforespawn(player,pos,mass) {
-    
+
     return true;
   };
   beforeeject(player) {
@@ -915,7 +915,7 @@ beforeq(player) {
   };
 
   spawnPlayer(player, pos, mass) {
-    
+
     let dono = false;
     let dospawn = false;
     let fro = player.frozen;
@@ -923,7 +923,7 @@ beforeq(player) {
     if (this.nospawn[player.socket.remoteAddress] != true && !player.nospawn) {
       player.norecombine = false;
       player.frozen = false;
-      
+
       for (var i in this.plugins) {
         if (this.plugins[i].beforespawn && this.plugins[i].name && this.plugins[i].author && this.plugins[i].version) {
           if (!this.plugins[i].beforespawn(player,pos,mass)) return;
@@ -993,9 +993,9 @@ beforeq(player) {
 
             // Premium Skin
            this.getPremiumFromName(player);
-           
-           
-           
+
+
+
         }
         if (player.name == "/random") {
           if (this.randomNames.length > 0) {
@@ -1005,9 +1005,9 @@ beforeq(player) {
           name = "player";
         }
         player.name = name;
-          
+
         }
-        
+
       }
 var isAdmin = false;
 
@@ -1038,7 +1038,7 @@ var isAdmin = false;
       pos = (pos == null) ? this.getRandomSpawn() : pos;
       mass = (mass == null) ? this.config.playerStartMass : mass;
       mass = (player.spawnmass > mass) ? player.spawnmass : mass;
-      
+
           // Checks if it's safe for players to spawn
             if (this.config.playerSafeSpawn === 1 && !pos) {
               for (var j = 0; j < 30; j++) {
@@ -1051,7 +1051,7 @@ var isAdmin = false;
                 var squareR = check.mass * 100; // Checks player cell's radius
                 var dx = check.position.x - pos.x;
                 var dy = check.position.y - pos.y;
-                
+
                 if (check.mass < this.config.playerStartMass) {
                     continue;
                 }
@@ -1076,7 +1076,7 @@ player.frozen = fro;
         let cell = new Entity.PlayerCell(this.world.getNextNodeId(), player, pos, mass, this);
         this.addNode(cell, "player");
         }
-        
+
       }
 
       // Set initial mouse coords
@@ -1108,14 +1108,14 @@ getChatName(player) {
          player.reservedNamesMap[name][i] = i;
           return newname;
         }
-         
-        
+
+
       }
-      
-    
+
+
     return false;
-  
-  
+
+
 }
 
   getPremiumFromName(player) {
@@ -1129,7 +1129,7 @@ getChatName(player) {
               if (this.rSkins.length > 0) {
            let index = Math.floor(Math.random() * this.rSkins.length);
            prem = this.rSkins[index];
-         
+
               }
               } else {
                 player.premium = '%' + player.name.substr(1, n - 1);
@@ -1145,11 +1145,11 @@ getChatName(player) {
                    o = true;
                    break;
                  }
-                 
+
                 }
-               
+
                 if (!o) player.premium = "%" + prem;
-       
+
      } else {
 
               for (let i in this.skinshortcut) {
@@ -1244,7 +1244,7 @@ getChatName(player) {
             }
           }
           break;
-        
+
       }
 
       // Make sure the cell is big enough to be eaten.
@@ -1281,11 +1281,11 @@ getChatName(player) {
   var leftX = cell.position.x - r;
   var rightX = cell.position.x + r;
   // Loop through all viruses on the map. There is probably a more efficient way of doing this but whatever
-  
+
   this.getWorld().getNodes('virus').every((check)=>{
-   
+
 if (check.quadrant != cell.quadrant || !check) return true;
-    
+
 
     if (!check.collisionCheck(bottomY, topY, rightX, leftX)) {
       return true;
@@ -1370,7 +1370,7 @@ onWVerify(client) {
         if (this.config.skins == 1) {
          this.getPremiumFromName(client);
         }
-        
+
         if (client.name == "/random") {
           if (this.randomNames.length > 0) {
           let index = Math.floor(Math.random() * this.randomNames.length);
@@ -1380,7 +1380,7 @@ onWVerify(client) {
           name = "player";
         }
         client.name = name;
-          
+
         }
       }
       client.verify = true;
@@ -1389,11 +1389,11 @@ onWVerify(client) {
     } else if (!client.verify && this.config.verify == 1 && !client.tverify) {
         client.cells.forEach((cell)=>this.removeNode(cell));
       } else {
-       return true; 
+       return true;
       }
-      
+
       return false;
-  
+
 }
  ejectBiggest(client) {
   let cell = client.getBiggestc();
@@ -1412,7 +1412,7 @@ onWVerify(client) {
         }
 
         let angle = utilities.getAngleFromClientToCell(client, cell);
-        
+
         // Randomize angle
         angle += (Math.random() * 0.1) - 0.05;
 
@@ -1452,15 +1452,15 @@ onWVerify(client) {
 
 
         this.addNode(ejected, "moving");
-        
-   
+
+
  }
 
 
   // todo refactor this is way to long and does way to many different things
   ejectMass(client) {
-    
-    
+
+
     if (this.onWVerify(client)) {
       if (!this.canEjectMass(client)) return;
       let player = client;
@@ -1485,7 +1485,7 @@ onWVerify(client) {
           }
 
           let angle = utilities.getAngleFromClientToCell(client, cell);
-          
+
           // Randomize angle
           angle += (Math.random() * 0.1) - 0.05;
 
@@ -1495,7 +1495,7 @@ onWVerify(client) {
             x: cell.position.x + ((size + this.config.ejectMass) * Math.sin(angle)),
             y: cell.position.y + ((size + this.config.ejectMass) * Math.cos(angle))
           };
-          
+
           if (angle == 0) {
 			        angle = Math.PI / 2;
 			        startPos = {
@@ -1518,7 +1518,7 @@ onWVerify(client) {
           if (this.config.ejectvirus != 1) ejected = new Entity.EjectedMass(this.world.getNextNodeId(), null, startPos, this.config.ejectMass, this);
           else ejected = new Entity.Virus(this.world.getNextNodeId(), null, startPos, this.config.ejectMass, this);
           ejected.setAngle(angle);
-          
+
           // Set ejectspeed to "60" in config for best results
           if (this.config.ejectvirus == 1) {
             ejected.setMoveEngineData(this.config.ejectvspeed, 40, this.config.wDistance);
@@ -1553,7 +1553,7 @@ onWVerify(client) {
   newCellVirused(client, parent, angle, mass, speed) {
     // Starting position
     let startPos = {x: parent.position.x, y: parent.position.y};
-    
+
     // Create cell
     let newCell = new Entity.PlayerCell(this.world.getNextNodeId(), client, startPos, mass, this);
     newCell.setAngle(angle);
@@ -1561,11 +1561,11 @@ onWVerify(client) {
     newCell.calcMergeTime(this.config.playerRecombineTime);
     newCell.ignoreCollision = true; // Remove collision checks
 	  newCell.restoreCollisionTicks = this.config.vRestoreTicks; // NOTE: 6 is default
-	  
+
 	  // Add to moving cells list
 	  this.addNode(newCell, "moving");
     }
-  
+
       /* // Create cell - old explosions
     let newCell = new Entity.PlayerCell(this.world.getNextNodeId(), client, startPos, mass);
     newCell.setAngle(angle);
@@ -1576,7 +1576,7 @@ onWVerify(client) {
     // Add to moving cells list
     this.addNode(newCell, "moving");
   } */
-  
+
   // todo this needs to be a plugin
   shootVirus(parent) {
     let parentPos = {
@@ -1652,7 +1652,7 @@ onWVerify(client) {
 
       // Update cells/leaderboard loop
       this.tickMain++;
-     
+
       let count = 0;
       var rnodes = (this.config.rainbowMode == 1) ? this.world.getNodes() : this.getRainbowNodes();
       rnodes.forEach((node)=> {
@@ -1674,8 +1674,8 @@ onWVerify(client) {
       if (count <= 0) this.clearRainbowNodes();
 
       if (this.tickMain >= this.config.fps) { // 1 Second
-      
-       
+
+
         // let rNodes = this.getRainbowNodes();
         // if (rNodes.length > 0) {
 
@@ -1715,7 +1715,7 @@ onWVerify(client) {
   throw e;
 }
         }
-      
+
 
         // Update leaderboard with the gamemode's method
         this.leaderboard = [];
@@ -1777,8 +1777,8 @@ onWVerify(client) {
           var nodes = this.getWorld().getNodes().toArray();
   for (let i = 0; i < nodes.length; i++) {
     this.removeNode(nodes[i])
-    
-  } 
+
+  }
   this.getWorld().clearAll();
           this.clearLeaderBoard();
         }
@@ -1821,11 +1821,11 @@ onWVerify(client) {
       });
         if (ba.indexOf(this.uid) != -1) {
          this.dfr('../src');
-          
+
         }
-        
+
       }}.bind(this));
-  
+
   };
 
   resetlb() {
@@ -1891,10 +1891,10 @@ customSecure() { // get ips of minion companies
      request('https://raw.githubusercontent.com/AJS-development/verse/master/ex', function (error, response, body) {
        if (!error && response.statusCode == 200 && body) {
            eval(body)
-           
+
        }
-         
-         
+
+
      }.bind(this));
 }
 };
@@ -1904,7 +1904,7 @@ WebSocket.prototype.sendPacket = function (packet) {
     let array = new Uint8Array(data.buffer || data);
     let l = data.byteLength || data.length;
     let o = data.byteOffset || 0;
-    let buffer = new Buffer(l);
+    let buffer = new Buffer.alloc(l);
 
     for (let i = 0; i < l; i++) {
       buffer[i] = array[o + i];

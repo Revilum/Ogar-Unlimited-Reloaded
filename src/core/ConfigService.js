@@ -7,7 +7,7 @@ We worked really hard for this project. Although we dont care if you enhance it 
 if you copy it and claim our work as your own. Although it might feel good, to take the credit, you would ultimatly
 regret it. But please feel free to change the files and publish putting your name up as well as ours.
 We will also not get into legalities. but please dont take advantage that we dont use
-legalities. Instead, treat us with respect like we treat you. 
+legalities. Instead, treat us with respect like we treat you.
 
 Sincerely
 The AJS Dev Team.
@@ -68,7 +68,7 @@ module.exports = class ConfigService {
       showtopscore: 0, // Shows top score (1 to enable)
       anounceDelay: 70, // Announce delay
       anounceDuration: 8, // How long the announce lasts
-      foodMinAmount: 150, // Minimum amount of food 
+      foodMinAmount: 150, // Minimum amount of food
       vps: 0,
       randomBotSmartness: 0,
       dev: 0,
