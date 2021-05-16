@@ -1,7 +1,9 @@
 To Install Ogar Unlimited, you need [Node.js](http://nodejs.org)
 
-(To install Node.js for linux simply do this `curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-sudo apt-get install -y nodes` Then do this `sudo apt-get install -y build-essential`)
+(To install Node.js for linux simply do this `curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install node` Then do this `sudo apt-get install -y build-essential`)
+
+When requested, make sure that no unusual amount of packages get removed and press 'y', enter to continue.
 
 (You can install and use Ogar unlimited on windows very quickly. First click `InstallWebSocket.bat` in src. then wait (it takes awhile) then click `Start.bat` and your off! the next time you start the server, you only have to click `Start.bat`)
 
@@ -23,7 +25,7 @@ If you want to connect with your friends, you need to port forward
 
 (Installation for Linux)
 ```
-pi@andrewserver:~ $ git clone https://github.com/AJS-development/Ogar-unlimited.git
+pi@andrewserver:~ $ git clone https://github.com/Revilum/Ogar-Unlimited-Reloaded
 Cloning into 'Ogar-unlimited'...
 remote: Counting objects: 7147, done.
 remote: Compressing objects: 100% (66/66), done.
@@ -31,7 +33,7 @@ remote: Total 7147 (delta 45), reused 0 (delta 0), pack-reused 7081
 Receiving objects: 100% (7147/7147), 1.10 MiB | 1.83 MiB/s, done.
 Resolving deltas: 100% (5082/5082), done.
 Checking connectivity... done.
-pi@andrewserver:~ $ cd ~/Ogar-unlimited/src
+pi@andrewserver:~ $ cd Ogar-unlimited-Reloaded/src
 pi@andrewserver:~/Ogar-unlimited/src $ npm install
 Ogar@1.0.0 /home/pi/Ogar-unlimited
 ├─┬ request@2.69.0 
