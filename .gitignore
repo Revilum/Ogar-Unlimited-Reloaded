@@ -42,3 +42,4 @@ banned.txt
 opbyip.txt
 filesTemp.json
 src/core/Updater.js
+package-lock.json
