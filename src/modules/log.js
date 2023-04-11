@@ -11,7 +11,7 @@ module.exports = Log;
 Log.prototype.setup = function (gameServer) {
   if (!fs.existsSync('./logs')) {
     // Make log folder
-    fs.mkdir('./logs');
+    //fs.mkdir('./logs');
   }
   local = false;
   if (gameServer.language != "en") {
